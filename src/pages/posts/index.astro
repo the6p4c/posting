@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 
 import RootLayout from "../../posting/RootLayout.astro";
+import { PostView } from "../../posting/Post";
 
 const allPosts = await getCollection("posts");
 
@@ -13,26 +14,15 @@ allPosts.sort(newestFirst);
 ---
 
 <RootLayout>
-  <ul>
-    {
-      allPosts.map(async (post) => {
-        const { Content } = await post.render();
+  {
+    allPosts.map(async (post) => {
+      const { Content } = await post.render();
 
-        return (
-          <li>
-            <h2>post</h2>
-            <div>posted {post.data.posted.toLocaleString()}</div>
-            {post.data.tags && (
-              <div>
-                tagged {post.data.tags.map((tag) => `#${tag}`).join(", ")}
-              </div>
-            )}
-            <div>
-              <Content />
-            </div>
-          </li>
-        );
-      })
-    }
-  </ul>
+      return (
+        <PostView post={post}>
+          <Content />
+        </PostView>
+      );
+    })
+  }
 </RootLayout>
