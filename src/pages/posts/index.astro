@@ -19,6 +19,11 @@ allPosts.sort(newestFirst);
         <li>
           <h2>post</h2>
           <div>posted {post.data.posted.toLocaleString()}</div>
+          {post.data.tags && (
+            <div>
+              tagged {post.data.tags.map((tag) => `#${tag}`).join(", ")}
+            </div>
+          )}
           <div>
             <Content />
           </div>
