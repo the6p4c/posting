@@ -1,0 +1,65 @@
+/********
+ * feed *
+ ********/
+.feed {
+  max-width: 30rem;
+}
+
+.feed > .post {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px dashed #aaa;
+}
+
+/********
+ * post *
+ ********/
+.post > header,
+.post > footer {
+  padding: 0.5rem;
+}
+
+.post > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.post > footer {
+  border-top: 1px solid #ccc;
+}
+
+.post > main {
+  margin: 0.5rem;
+}
+
+/***************
+ * post header *
+ ***************/
+.author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.author > img {
+  width: 1.8rem;
+  border-radius: 9999px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  font-size: 80%;
+  color: #aaa;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

@@ -1,28 +1,9 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
-import RootLayout from "../../posting/RootLayout.astro";
-import { PostView } from "../../posting/Post";
+import FeedLayout from "../../posting/FeedLayout.astro";
 
 const allPosts = await getCollection("posts");
-
-const newestFirst = (
-  a: CollectionEntry<"posts">,
-  b: CollectionEntry<"posts">
-) => b.data.posted.valueOf() - a.data.posted.valueOf();
-allPosts.sort(newestFirst);
 ---
 
-<RootLayout>
-  {
-    allPosts.map(async (post) => {
-      const { Content } = await post.render();
-
-      return (
-        <PostView post={post}>
-          <Content />
-        </PostView>
-      );
-    })
-  }
-</RootLayout>
+<FeedLayout posts={allPosts} />

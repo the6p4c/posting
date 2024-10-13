@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { PostView } from "./Post";
+import RootLayout from "./RootLayout.astro";
+
+import "./FeedLayout.css";
+
+interface Props {
+  posts: CollectionEntry<"posts">[];
+}
+
+const { posts } = Astro.props;
+
+const newestFirst = (
+  a: CollectionEntry<"posts">,
+  b: CollectionEntry<"posts">
+) => b.data.posted.valueOf() - a.data.posted.valueOf();
+posts.sort(newestFirst);
+---
+
+<RootLayout>
+  <h1>all posts</h1>
+  <section class="feed">
+    {
+      posts.map(async (post) => {
+        const { Content } = await post.render();
+
+        return (
+          <PostView post={post}>
+            <Content />
+          </PostView>
+        );
+      })
+    }
+  </section>
+</RootLayout>

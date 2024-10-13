@@ -9,15 +9,47 @@ export function PostView({
   children: ReactNode;
 }) {
   return (
-    <article>
+    <article className="post">
       <header>
-        <div>{post.data.posted.toLocaleString()}</div>
-        {post.data.tags && (
-          <div>tagged {post.data.tags.map((tag) => `#${tag}`).join(", ")}</div>
-        )}
+        <Author imageUrl="/bark.png" name="bark" />
+        <div className="meta">
+          <Timestamp date={post.data.posted} />
+          <Tags tags={post.data.tags || []} />
+        </div>
       </header>
       <main>{children}</main>
-      <footer></footer>
+      {/* <footer></footer> */}
     </article>
+  );
+}
+
+function Author({ imageUrl, name }: { imageUrl: string; name: string }) {
+  return (
+    <div className="author">
+      <img src={imageUrl} />
+      <span>{name}</span>
+    </div>
+  );
+}
+
+function Timestamp({ date }: { date: Date }) {
+  return (
+    <time
+      title={`posted on ${date.toLocaleString()}`}
+      dateTime={date.toISOString()}
+      className="timestamp"
+    >
+      {date.toISOString().slice(0, 10)}
+    </time>
+  );
+}
+
+function Tags({ tags }: { tags: string[] }) {
+  return (
+    <ul className="tags">
+      {tags.map((tag) => (
+        <li key={tag}>#{tag}</li>
+      ))}
+    </ul>
   );
 }
