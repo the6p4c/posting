@@ -1,7 +1,13 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 const allPosts = await getCollection("posts");
+
+const newestFirst = (
+  a: CollectionEntry<"posts">,
+  b: CollectionEntry<"posts">
+) => b.data.posted.valueOf() - a.data.posted.valueOf();
+allPosts.sort(newestFirst);
 ---
 
 <ul>
