@@ -24,8 +24,9 @@ export function PostView({
 }
 
 function Author({ imageUrl, name }: { imageUrl: string; name: string }) {
+  // https://microformats.org/wiki/h-card
   return (
-    <div className="author">
+    <div className="author h-card">
       <img src={imageUrl} />
       <span>{name}</span>
     </div>
