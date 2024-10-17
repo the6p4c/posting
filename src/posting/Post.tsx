@@ -9,52 +9,37 @@ export function PostView({
   children: ReactNode;
 }) {
   return (
-    <article className="post">
+    <article className="post h-entry">
       <header>
-        <Author imageUrl="/bark.png" name="bark" />
+        <div className="author h-card">
+          <img src="/bark.png" className="u-photo" />
+          <span className="p-name">@bark</span>
+        </div>
+
         <div className="meta">
-          <Timestamp date={post.data.posted} />
-          <Tags tags={post.data.tags || []} />
+          <a href="#">
+            <time
+              title={`posted on ${post.data.posted.toLocaleString()}`}
+              dateTime={post.data.posted.toISOString()}
+              className="timestamp dt-published"
+            >
+              {post.data.posted.toISOString().slice(0, 10)}
+            </time>
+          </a>
+
+          <ul className="tags">
+            {(post.data.tags || []).map((tag) => (
+              <li key={tag} className="p-category">
+                <a href="#">#{tag}</a>
+              </li>
+            ))}
+          </ul>
         </div>
       </header>
-      <main className="prose">{children}</main>
+
+      <main className="prose e-content">{children}</main>
+
       {/* <footer></footer> */}
     </article>
-  );
-}
-
-function Author({ imageUrl, name }: { imageUrl: string; name: string }) {
-  // https://microformats.org/wiki/h-card
-  return (
-    <div className="author h-card">
-      <img src={imageUrl} />
-      <span>@{name}</span>
-    </div>
-  );
-}
-
-function Timestamp({ date }: { date: Date }) {
-  return (
-    <a href="#">
-      <time
-        title={`posted on ${date.toLocaleString()}`}
-        dateTime={date.toISOString()}
-        className="timestamp"
-      >
-        {date.toISOString().slice(0, 10)}
-      </time>
-    </a>
-  );
-}
-
-function Tags({ tags }: { tags: string[] }) {
-  return (
-    <ul className="tags">
-      {tags.map((tag) => (
-        <li key={tag}>
-          <a href="#">#{tag}</a>
-        </li>
-      ))}
-    </ul>
   );
 }
