@@ -51,6 +51,15 @@ a:hover {
 /***************
  * post header *
  ***************/
+.post > header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post > header a:hover {
+  color: #777;
+}
+
 .author {
   display: flex;
   align-items: center;

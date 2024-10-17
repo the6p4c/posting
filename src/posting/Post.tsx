@@ -35,13 +35,15 @@ function Author({ imageUrl, name }: { imageUrl: string; name: string }) {
 
 function Timestamp({ date }: { date: Date }) {
   return (
-    <time
-      title={`posted on ${date.toLocaleString()}`}
-      dateTime={date.toISOString()}
-      className="timestamp"
-    >
-      {date.toISOString().slice(0, 10)}
-    </time>
+    <a href="#">
+      <time
+        title={`posted on ${date.toLocaleString()}`}
+        dateTime={date.toISOString()}
+        className="timestamp"
+      >
+        {date.toISOString().slice(0, 10)}
+      </time>
+    </a>
   );
 }
 
@@ -49,7 +51,9 @@ function Tags({ tags }: { tags: string[] }) {
   return (
     <ul className="tags">
       {tags.map((tag) => (
-        <li key={tag}>#{tag}</li>
+        <li key={tag}>
+          <a href="#">#{tag}</a>
+        </li>
       ))}
     </ul>
   );
