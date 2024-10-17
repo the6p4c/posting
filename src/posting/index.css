@@ -1,3 +1,17 @@
+body {
+  background: #222;
+  color: #fff;
+  font-family: Inter, sans-serif;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #ddd;
+}
+
 /********
  * feed *
  ********/

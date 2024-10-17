@@ -28,7 +28,7 @@ function Author({ imageUrl, name }: { imageUrl: string; name: string }) {
   return (
     <div className="author h-card">
       <img src={imageUrl} />
-      <strong>{name}</strong>
+      <span>@{name}</span>
     </div>
   );
 }
