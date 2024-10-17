@@ -1,6 +1,8 @@
 import type { CollectionEntry } from "astro:content";
 import type { ReactNode } from "react";
 
+import "./Post.css";
+
 export function PostView({
   post,
   children,
@@ -17,7 +19,7 @@ export function PostView({
           <Tags tags={post.data.tags || []} />
         </div>
       </header>
-      <main>{children}</main>
+      <main className="prose">{children}</main>
       {/* <footer></footer> */}
     </article>
   );
