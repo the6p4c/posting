@@ -1,8 +1,6 @@
 import type { CollectionEntry } from "astro:content";
 import type { ReactNode } from "react";
 
-import "./Post.css";
-
 export function PostView({
   post,
   children,
@@ -30,7 +28,7 @@ function Author({ imageUrl, name }: { imageUrl: string; name: string }) {
   return (
     <div className="author h-card">
       <img src={imageUrl} />
-      <span>{name}</span>
+      <strong>{name}</strong>
     </div>
   );
 }

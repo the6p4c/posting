@@ -1,4 +1,17 @@
 /********
+ * feed *
+ ********/
+.feed {
+  max-width: 30rem;
+}
+
+.feed > .post {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px dashed #555;
+}
+
+/********
  * post *
  ********/
 .post > header,
@@ -10,11 +23,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #555;
 }
 
 .post > footer {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #555;
 }
 
 .post > main {
@@ -22,8 +35,8 @@
 }
 
 /***************
-  * post header *
-  ***************/
+ * post header *
+ ***************/
 .author {
   display: flex;
   align-items: center;
@@ -40,7 +53,7 @@
   flex-direction: column;
   align-items: end;
   font-size: 80%;
-  color: #aaa;
+  color: #555;
 }
 
 .tags {
@@ -54,7 +67,13 @@
 /*************
  * post body *
  *************/
+.prose {
+  line-height: 1.5;
+}
+
 .prose img {
+  display: block;
   max-width: 100%;
   height: auto;
+  margin: 0 auto;
 }
