@@ -6,4 +6,4 @@ import FeedLayout from "../../posting/FeedLayout.astro";
 const allPosts = await getCollection("posts");
 ---
 
-<FeedLayout posts={allPosts} />
+<FeedLayout title="all posts" posts={allPosts} />

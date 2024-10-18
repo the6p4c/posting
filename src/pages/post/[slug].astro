@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+
+import FeedLayout from "../../posting/FeedLayout.astro";
+import { getEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = await getEntry("posts", slug);
+---
+
+<FeedLayout posts={[post]} />
