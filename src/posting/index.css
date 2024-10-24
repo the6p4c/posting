@@ -12,6 +12,17 @@ a:hover {
   color: #ddd;
 }
 
+button {
+  padding: 0.2rem 0.5rem;
+  color: #fff;
+  background: none;
+  border: 1px solid #fff;
+}
+
+button:hover {
+  background: #444;
+}
+
 .container {
   max-width: 30rem;
 }
@@ -99,4 +110,25 @@ a:hover {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+}
+
+/***************
+ * post editor *
+ ***************/
+.editor textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 7rem;
+  margin: 0;
+  padding: 0;
+  resize: vertical;
+
+  color: #fff;
+  background: none;
+  border: none;
+}
+
+.editorFooter {
+  display: flex;
+  justify-content: end;
 }

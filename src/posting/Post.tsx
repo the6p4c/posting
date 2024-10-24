@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content";
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 
 export function PostView({
   post,
@@ -40,6 +40,40 @@ export function PostView({
       <main className="prose e-content">{children}</main>
 
       {/* <footer></footer> */}
+    </article>
+  );
+}
+
+export function PostEdit() {
+  const content = useRef<HTMLTextAreaElement | null>(null);
+
+  const post = () => {
+    if (!content.current) return;
+
+    console.log(`post: ${content.current.value}`);
+  };
+
+  return (
+    <article className="post">
+      <header>
+        <div className="author">
+          <img src="/bark.png" />
+          <span>@bark</span>
+        </div>
+      </header>
+
+      <main className="editor">
+        <textarea
+          ref={content}
+          placeholder="you won't post, you're way scared"
+        />
+      </main>
+
+      <footer className="editorFooter">
+        <button type="button" onClick={post}>
+          post!
+        </button>
+      </footer>
     </article>
   );
 }
