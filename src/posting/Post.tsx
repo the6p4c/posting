@@ -17,7 +17,7 @@ export function PostView({
         </div>
 
         <div className="meta">
-          <a href="#">
+          <a href={`/post/${post.slug}`}>
             <time
               title={`posted on ${post.data.posted.toLocaleString()}`}
               dateTime={post.data.posted.toISOString()}
@@ -30,7 +30,7 @@ export function PostView({
           <ul className="tags">
             {(post.data.tags || []).map((tag) => (
               <li key={tag} className="p-category">
-                <a href="#">#{tag}</a>
+                <a href={`/posts/tagged/${tag}`}>#{tag}</a>
               </li>
             ))}
           </ul>
