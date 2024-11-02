@@ -1,21 +1,16 @@
 ---
-import { getCollection } from "astro:content";
-
 import FeedLayout from "../../posting/FeedLayout.astro";
-import { getEntry } from "astro:content";
+import { getPost, getPosts } from "../../posting/posts";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
+  const posts = await getPosts();
 
-  return posts.map((post) => ({
-    params: {
-      slug: post.slug,
-    },
-  }));
+  return posts.map((post) => ({ params: { slug: post.slug } }));
 }
 
 const { slug } = Astro.params;
-const post = await getEntry("posts", slug);
+const post = await getPost(slug);
+if (!post) throw "invalid post slug?";
 ---
 
 <FeedLayout posts={[post]} />

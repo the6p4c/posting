@@ -1,9 +1,8 @@
 ---
-import { getCollection } from "astro:content";
-
 import FeedLayout from "../../posting/FeedLayout.astro";
+import { getPosts } from "../../posting/posts";
 
-const allPosts = await getCollection("posts");
+const posts = await getPosts();
 ---
 
-<FeedLayout title="all posts" posts={allPosts} />
+<FeedLayout title="all posts" posts={posts} />
