@@ -9,15 +9,17 @@ export function PostView({
   children: ReactNode;
 }) {
   return (
+    /* https://microformats.org/wiki/h-entry */
     <article className="post h-entry">
       <header>
-        <div className="author h-card">
+        {/* https://microformats.org/wiki/h-card */}
+        <div className="author p-author h-card">
           <img src="/bark.png" className="u-photo" />
           <span className="p-name">@bark</span>
         </div>
 
         <div className="meta">
-          <a href={`/post/${post.slug}`}>
+          <a href={`/post/${post.slug}`} className="u-url">
             <time
               title={`posted on ${post.data.posted.toLocaleString()}`}
               dateTime={post.data.posted.toISOString()}
