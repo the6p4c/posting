@@ -25,9 +25,11 @@ posts.sort(newestFirst);
         const { Content } = await post.render();
 
         return (
-          <PostView post={post}>
-            <Content />
-          </PostView>
+          <article class="thread">
+            <PostView post={post}>
+              <Content />
+            </PostView>
+          </article>
         );
       })
     }

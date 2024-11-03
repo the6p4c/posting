@@ -56,26 +56,28 @@ export function PostEdit() {
   };
 
   return (
-    <article className="post">
-      <header>
-        <div className="author">
-          <img src="/bark.png" />
-          <span>@bark</span>
-        </div>
-      </header>
+    <article className="thread">
+      <article className="post">
+        <header>
+          <div className="author">
+            <img src="/bark.png" />
+            <span>@bark</span>
+          </div>
+        </header>
 
-      <main className="editor">
-        <textarea
-          ref={content}
-          placeholder="you won't post, you're way scared"
-        />
-      </main>
+        <main className="editor">
+          <textarea
+            ref={content}
+            placeholder="you won't post, you're way scared"
+          />
+        </main>
 
-      <footer className="editorFooter">
-        <button type="button" onClick={post}>
-          post!
-        </button>
-      </footer>
+        <footer className="editorFooter">
+          <button type="button" onClick={post}>
+            post!
+          </button>
+        </footer>
+      </article>
     </article>
   );
 }
