@@ -1,6 +1,6 @@
 ---
-import FeedLayout from "../../../posting/FeedLayout.astro";
-import { getPostsWithTag, getTags } from "../../../posting/posts";
+import FeedLayout from "@/posting/FeedLayout.astro";
+import { getPostsWithTag, getTags } from "@/posting/posts";
 
 export async function getStaticPaths() {
   const tags = await getTags();
