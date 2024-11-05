@@ -1,6 +1,7 @@
 ---
-import FeedLayout from "@/posting/FeedLayout.astro";
+import Feed from "@/posting/Feed.astro";
 import { getPost, getPosts } from "@/posting/posts";
+import RootLayout from "@/posting/RootLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -13,4 +14,6 @@ const post = await getPost(slug);
 if (!post) throw "invalid post slug?";
 ---
 
-<FeedLayout posts={[post]} />
+<RootLayout>
+  <Feed posts={[post]} />
+</RootLayout>

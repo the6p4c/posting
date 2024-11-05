@@ -1,6 +1,7 @@
 ---
-import FeedLayout from "@/posting/FeedLayout.astro";
+import Feed from "@/posting/Feed.astro";
 import { getPostsWithTag, getTags } from "@/posting/posts";
+import RootLayout from "@/posting/RootLayout.astro";
 
 export async function getStaticPaths() {
   const tags = await getTags();
@@ -12,4 +13,6 @@ const { tag } = Astro.params;
 const posts = await getPostsWithTag(tag);
 ---
 
-<FeedLayout title={`posts tagged #${tag}`} posts={posts} />
+<RootLayout title={`posts tagged #${tag}`}>
+  <Feed posts={posts} />
+</RootLayout>
