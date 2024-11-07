@@ -1,10 +1,6 @@
 {
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "exactOptionalPropertyTypes": false,
-    "baseUrl": "./src",
-    "paths": {
-      "@/*": ["./*"]
-    }
+    "exactOptionalPropertyTypes": false
   }
 }

@@ -1,0 +1,11 @@
+---
+import Feed from "posting/Feed.astro";
+import { getPosts } from "posting/posts";
+import RootLayout from "posting/RootLayout.astro";
+
+const posts = await getPosts();
+---
+
+<RootLayout title="all posts">
+  <Feed posts={posts} />
+</RootLayout>

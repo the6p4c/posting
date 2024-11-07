@@ -1,15 +1,6 @@
 {
-  "name": "posting",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
-  },
-  "dependencies": {
-    "@astrojs/react": "^3.6.2",
-    "@astrojs/rss": "^4.0.9",
-    "astro": "^4.16.2"
-  }
+  "workspaces": [
+    "posting",
+    "posting-dev-site"
+  ]
 }

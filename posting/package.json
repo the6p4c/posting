@@ -1,0 +1,8 @@
+{
+  "name": "posting",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "astro": "^4.16.10"
+  }
+}
