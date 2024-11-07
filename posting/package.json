@@ -2,7 +2,10 @@
   "name": "posting",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {
+  "exports": {
+    "./": "./src/"
+  },
+  "peerDependencies": {
     "astro": "^4.16.10"
   }
 }
