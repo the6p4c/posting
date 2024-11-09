@@ -1,5 +1,7 @@
 ---
 import "@fontsource/inter";
+
+import "posting/styles";
 ---
 
 <!doctype html>
@@ -10,7 +12,9 @@ import "@fontsource/inter";
     <title>posting template site</title>
   </head>
   <body>
-    <slot />
+    <main class="container">
+      <slot />
+    </main>
   </body>
 </html>
 
@@ -18,4 +22,11 @@ import "@fontsource/inter";
   body {
     font-family: "Inter", sans-serif;
   }
+
+  .container {
+    max-width: 35rem;
+    border: 1px dotted red;
+  }
 </style>
+
+<style is:global></style>
