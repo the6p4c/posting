@@ -1,0 +1,13 @@
+---
+import { getPosts } from "posting";
+import { Feed } from "posting/components";
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const posts = await getPosts();
+---
+
+<BaseLayout>
+  <p>this is the posts page. you have {posts.length} posts</p>
+  <Feed posts={posts} />
+</BaseLayout>

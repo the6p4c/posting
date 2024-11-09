@@ -28,6 +28,9 @@ $ jq '.dependencies.posting = "git://github.com/the6p4c/posting.git"' package.js
 $ ...
 ```
 
+## 2.5. ⚛️ enable the react integration
+TODO: oops!
+
 ## 3. 📜 create your `posts` content collection
 every post you make becomes an entry within the `posts` [content collection](https://docs.astro.build/guides/content-collections/). entries are markdown files with frontmatter stored in the `src/content/posts/` directory.
 

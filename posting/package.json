@@ -7,6 +7,7 @@
     "./components": "./src/components/index.ts"
   },
   "peerDependencies": {
+    "@astrojs/react": "^3.6.2",
     "astro": "^4.16.10"
   }
 }

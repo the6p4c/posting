@@ -8,6 +8,9 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.16.10"
+    "@astrojs/react": "^3.6.2",
+    "@fontsource/inter": "^5.1.0",
+    "astro": "^4.16.10",
+    "posting": "workspace:*"
   }
 }
