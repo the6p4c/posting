@@ -35,8 +35,8 @@ the `posts` content collection needs to be defined and registered with astro.
 
 ```typescript
 /* src/content/config.ts */
-import { defineCollection } from 'astro:content';
-import { postsSchema } from 'posting';
+import { defineCollection } from "astro:content";
+import { postsSchema } from "posting";
 
 // 1. define the `posts` collection
 const posts = defineCollection({
@@ -69,7 +69,7 @@ the `Feed` component accepts a list of posts and renders them. you can use it to
 
 ```astro
 /* src/pages/index.astro */
-import Feed from "posting/components/Feed.astro";
+import { Feed } from "posting/components";
 
 import MySiteLayout from "../layouts/MySiteLayout.astro";
 
@@ -85,7 +85,7 @@ you can also filter the list of posts to create tag feeds, user feeds, and any o
 
 ```astro
 /* src/pages/index.astro */
-import Feed from "posting/components/Feed.astro";
+import { Feed } from "posting/components";
 
 import MySiteLayout from "../layouts/MySiteLayout.astro";
 
@@ -102,7 +102,7 @@ although the `Feed` component can render several posts, it's also useful for ren
 
 ```astro
 /* src/pages/post/[slug].astro */
-import Feed from "posting/components/Feed";
+import { Feed } from "posting/components";
 
 import MySiteLayout from "../layouts/MySiteLayout.astro";
 

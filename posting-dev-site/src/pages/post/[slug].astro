@@ -1,7 +1,8 @@
 ---
-import Feed from "posting/Feed.astro";
-import { getPost, getPosts } from "posting/posts";
-import RootLayout from "posting/RootLayout.astro";
+import { getPost, getPosts } from "posting";
+import { Feed } from "posting/components";
+
+import RootLayout from "../../layouts/RootLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getPosts();

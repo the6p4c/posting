@@ -1,7 +1,8 @@
 ---
-import Feed from "posting/Feed.astro";
-import { getPosts } from "posting/posts";
-import RootLayout from "posting/RootLayout.astro";
+import { getPosts } from "posting";
+import { Feed } from "posting/components";
+
+import RootLayout from "../../layouts/RootLayout.astro";
 
 const posts = await getPosts();
 ---
