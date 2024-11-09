@@ -1,6 +1,6 @@
 {
   "workspaces": [
     "posting",
-    "posting-dev-site"
+    "posting-dev"
   ]
 }
