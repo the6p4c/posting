@@ -1,6 +1,7 @@
 {
   "workspaces": [
     "posting",
-    "posting-dev"
+    "posting-dev",
+    "posting-template"
   ]
 }
